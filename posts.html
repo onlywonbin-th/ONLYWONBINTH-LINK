@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WONBIN AT CHANEL PFW · รวมโพสต์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;800&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#ececec; --card:#d3d3d3; --ink:#0a0a0a; --mute:#6b6b6b; --sel:#bcd9f6;
+  --ui:"Inter","Noto Sans Thai",system-ui,sans-serif;
+  --head:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:var(--page);color:var(--ink);font-family:var(--ui);padding:max(22px,env(safe-area-inset-top)) 16px max(34px,env(safe-area-inset-bottom))}
+.card{position:relative;max-width:640px;margin:0 auto;background:var(--card);border-radius:16px;padding:26px 22px 24px}
+.deco{position:absolute;top:30px;right:22px;width:54px;filter:drop-shadow(0 6px 8px rgba(40,70,110,.25))}
+
+.ctx{position:relative;display:inline-flex;flex-wrap:wrap;background:#fff;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.18);margin-bottom:22px;max-width:calc(100% - 70px)}
+.ctx a{font-size:14px;color:var(--ink);text-decoration:none;padding:9px 14px;border-right:1px solid #e3e3e3;transition:background .12s}
+.ctx a:first-child{border-radius:10px 0 0 10px}
+.ctx a:last-child{border-right:0;border-radius:0 10px 10px 0}
+.ctx a:hover{background:#eef5fd}
+
+h1{margin:0 0 10px;font-family:var(--head);text-transform:uppercase;font-size:clamp(40px,12.5vw,70px);line-height:.95;letter-spacing:-.045em}
+h1 b{display:block;font-weight:800}
+h1 span{display:block;font-weight:300}
+.tags{margin:0 0 24px;font-size:13px;line-height:1.7;color:#333}
+
+.win{background:#fff;border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,.14);overflow:hidden}
+.bar{position:relative;display:flex;align-items:center;justify-content:center;height:34px;border-bottom:1px solid #ececec;font-size:12px;color:var(--mute)}
+.dots{position:absolute;left:12px;display:flex;gap:6px}
+.dots i{width:10px;height:10px;border-radius:50%;background:#ff6058}
+.dots i:nth-child(2){background:#ffbd2e}.dots i:nth-child(3){background:#28c840}
+.tools{padding:12px 14px 10px;border-bottom:1px solid #ececec}
+.search{width:100%;font:inherit;font-size:14px;padding:9px 12px;border:1px solid #dcdcdc;border-radius:8px;background:#f6f6f6;margin-bottom:10px}
+.search:focus{outline:2px solid #2b6cb0;outline-offset:1px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:13px;color:var(--ink);background:#f1f1f1;border:0;border-radius:999px;padding:5px 12px;cursor:pointer}
+.chip:hover{background:#e6e6e6}
+.chip[aria-pressed="true"]{background:var(--sel)}
+
+.item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid #efefef}
+.item:last-child{border-bottom:0}
+.pf{flex:none;min-width:38px;height:38px;padding:0 8px;border-radius:9px;background:var(--ink);color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.th{flex:none;width:46px;height:46px;border-radius:8px;object-fit:cover;background:#ddd}
+.link{flex:1;min-width:0;color:inherit;text-decoration:none}
+.link b{display:block;font-weight:600;font-size:15px;line-height:1.45;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:break-word}
+.link small{display:block;margin-top:2px;font-size:12px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.link:hover b{text-decoration:underline}
+.cp{flex:none;font:inherit;font-size:12px;color:var(--ink);background:#f1f1f1;border:0;border-radius:7px;padding:7px 10px;cursor:pointer}
+.cp:hover{background:var(--sel)}
+.empty{padding:34px 14px;text-align:center;color:var(--mute);font-size:14px}
+.more{display:block;width:100%;font:inherit;font-size:14px;padding:13px;border:0;border-top:1px solid #ececec;background:#fafafa;cursor:pointer}
+.more:hover{background:#eef5fd}
+:focus-visible{outline:2px solid #2b6cb0;outline-offset:2px}
+.status{max-width:640px;margin:12px auto 0;font-size:12px;color:var(--mute);line-height:1.5;padding:0 6px}
+.toast{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom));transform:translate(-50%,16px);z-index:9;background:var(--ink);color:#fff;padding:10px 20px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (max-width:480px){.cp{display:none}.th{width:40px;height:40px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b4d4f5"/><stop offset="1" stop-color="#6c9fd9"/></linearGradient></defs>
+  <symbol id="folder" viewBox="0 0 120 92">
+    <path d="M4 12a8 8 0 0 1 8-8h30l10 10h56a8 8 0 0 1 8 8v62a8 8 0 0 1-8 8H12a8 8 0 0 1-8-8z" fill="url(#fg)"/>
+    <path d="M4 30h112v-8a8 8 0 0 0-8-8H52L42 4H12a8 8 0 0 0-8 8z" fill="#fff" opacity=".28"/>
+  </symbol>
+</svg>
+
+<main class="card">
+  <svg class="deco" viewBox="0 0 120 92" aria-hidden="true"><use href="#folder"/></svg>
+
+  <nav class="ctx" id="live" aria-label="ค้นหาแฮชแท็กสด"></nav>
+
+  <h1><b>Wonbin at</b><span>Chanel PFW</span></h1>
+  <p class="tags">WONBIN AT CHANEL SS27<br>#WONBINforChanelSS27 · PARIS FASHION WEEK</p>
+
+  <section class="win">
+    <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span id="count">รวมโพสต์</span></div>
+    <div class="tools">
+      <input class="search" id="q" type="search" placeholder="ค้นหาโพสต์…" aria-label="ค้นหาโพสต์">
+      <div class="chips" id="chips" role="group" aria-label="แพลตฟอร์ม"></div>
+    </div>
+    <div id="list"><p class="empty">กำลังโหลดโพสต์…</p></div>
+    <button class="more" id="more" hidden>แสดงเพิ่ม</button>
+  </section>
+</main>
+<p class="status" id="status"></p>
+<div class="toast" id="toast" role="status">ก็อปลิงก์แล้ว</div>
+
+<script>
+/* ============ ตั้งค่าตรงนี้ ============
+   Google Sheet (แถวแรกเป็นหัวตาราง):
+     A = แพลตฟอร์ม (ว่างได้ ระบบเดาจากลิงก์ให้)
+     B = ลิงก์โพสต์ (จำเป็น)
+     C = คำอธิบาย/แคปชัน (ไม่บังคับ)
+     D = วันที่ เช่น 2026-10-02 (ไม่บังคับ — ถ้ามี จะเรียงใหม่สุดก่อน)
+     E = ลิงก์รูปตัวอย่าง (ไม่บังคับ)
+   ไฟล์ > แชร์ > เผยแพร่ไปยังเว็บ > เลือกชีต + CSV > วางลิงก์ด้านล่าง
+   ถ้าเว้นว่าง จะแสดงรายการตัวอย่าง */
+const SHEET_CSV_URL = "";
+const MAIN_TAG = "WONBINforChanelSS27";
+const COMMENT_PAGE = "index.html";   /* หน้าสุ่มคอมเม้น ใส่ "" ถ้าไม่ต้องการลิงก์ */
+const PAGE_SIZE = 20;
+
+const LIVE = [
+  ["X", "https://x.com/search?q=" + encodeURIComponent("#"+MAIN_TAG) + "&f=live"],
+  ["Instagram", "https://www.instagram.com/explore/tags/" + MAIN_TAG + "/"],
+  ["TikTok", "https://www.tiktok.com/tag/" + MAIN_TAG],
+  ["YouTube", "https://www.youtube.com/hashtag/" + MAIN_TAG.toLowerCase()],
+  ["Threads", "https://www.threads.net/search?q=" + encodeURIComponent("#"+MAIN_TAG)]
+];
+
+const DEMO = [
+  ["X","https://x.com/search?q=%23WONBINforChanelSS27&f=live","ตัวอย่าง: โพสต์แฮชแท็ก #WONBINforChanelSS27 บน X (ใส่ลิงก์โพสต์จริงในชีต)","2026-10-02",""],
+  ["Instagram","https://www.instagram.com/explore/tags/WONBINforChanelSS27/","ตัวอย่าง: โพสต์แฮชแท็กบน Instagram","2026-10-01",""],
+  ["TikTok","https://www.tiktok.com/tag/WONBINforChanelSS27","ตัวอย่าง: วิดีโอแฮชแท็กบน TikTok","2026-09-30",""]
+];
+
+const $ = id => document.getElementById(id);
+let all = [], plat = "ทั้งหมด", term = "", shown = PAGE_SIZE;
+
+function parseCSV(t){
+  const rows=[]; let row=[], cell="", q=false;
+  for(let i=0;i<t.length;i++){
+    const c=t[i];
+    if(q){
+      if(c==='"'){ if(t[i+1]==='"'){cell+='"';i++} else q=false }
+      else cell+=c;
+    }else if(c==='"') q=true;
+    else if(c===','){row.push(cell);cell=""}
+    else if(c==='\n'||c==='\r'){
+      if(c==='\r'&&t[i+1]==='\n') i++;
+      row.push(cell);cell="";rows.push(row);row=[];
+    }else cell+=c;
+  }
+  if(cell||row.length){row.push(cell);rows.push(row)}
+  return rows;
+}
+
+function hostOf(u){ try{ return new URL(u).hostname.replace(/^www\./,""); }catch(e){ return ""; } }
+function guess(u){
+  const h = hostOf(u);
+  if(/(^|\.)(x|twitter)\.com$/.test(h)) return "X";
+  if(h.includes("instagram")) return "Instagram";
+  if(h.includes("tiktok")) return "TikTok";
+  if(h.includes("youtu")) return "YouTube";
+  if(h.includes("threads")) return "Threads";
+  if(h.includes("facebook")||h==="fb.com"||h==="fb.watch") return "Facebook";
+  if(h.includes("weibo")) return "Weibo";
+  return "อื่น ๆ";
+}
+function short(p){
+  return ({"Instagram":"IG","YouTube":"YT","Facebook":"FB","Threads":"TH","TikTok":"TT","Weibo":"WB"})[p] || p.slice(0,3);
+}
+function norm(rows){
+  return rows.map(r=>{
+    const link=(r[1]||"").trim();
+    const d=(r[3]||"").trim(), t=Date.parse(d);
+    return {plat:(r[0]||"").trim()||guess(link), link, cap:(r[2]||"").trim(), date:d, ts:isNaN(t)?null:t, img:(r[4]||"").trim()};
+  }).filter(x=>/^https?:\/\//i.test(x.link));
+}
+
+async function load(){
+  const demo = ()=>{ all = norm(DEMO); };
+  if(!SHEET_CSV_URL){
+    demo();
+    $("status").textContent = "ตอนนี้แสดงรายการตัวอย่าง — ใส่ลิงก์ Google Sheet ใน SHEET_CSV_URL เพื่อดึงโพสต์จริง";
+  }else{
+    try{
+      const res = await fetch(SHEET_CSV_URL);
+      if(!res.ok) throw new Error(res.status);
+      all = norm(parseCSV(await res.text()).slice(1));
+      if(!all.length) throw new Error("empty");
+    }catch(e){
+      demo();
+      $("status").textContent = "โหลด Google Sheet ไม่สำเร็จ ตรวจสอบว่าเผยแพร่เป็น CSV แล้ว — ตอนนี้แสดงรายการตัวอย่างแทน";
+    }
+  }
+  if(all.some(x=>x.ts!==null))
+    all = all.map((x,i)=>({...x,i})).sort((a,b)=>(b.ts??-Infinity)-(a.ts??-Infinity)||a.i-b.i);
+}
+
+function renderLive(){
+  const nav = $("live"); nav.innerHTML = "";
+  LIVE.forEach(([n,u])=>{
+    const a=document.createElement("a"); a.href=u; a.target="_blank"; a.rel="noopener"; a.textContent=n; nav.appendChild(a);
+  });
+  if(COMMENT_PAGE){
+    const a=document.createElement("a"); a.href=COMMENT_PAGE; a.textContent="สุ่มคอมเม้น ▸"; nav.appendChild(a);
+  }
+}
+
+function renderChips(){
+  const counts = {}; all.forEach(x=>counts[x.plat]=(counts[x.plat]||0)+1);
+  const box = $("chips"); box.innerHTML = "";
+  [["ทั้งหมด",all.length], ...Object.entries(counts)].forEach(([p,n])=>{
+    const b=document.createElement("button"); b.className="chip"; b.textContent=p+" ("+n+")";
+    b.setAttribute("aria-pressed", p===plat);
+    b.onclick=()=>{ plat=p; shown=PAGE_SIZE; renderChips(); renderList(); };
+    box.appendChild(b);
+  });
+}
+
+function fmtDate(x){
+  return x.ts===null ? x.date : new Date(x.ts).toLocaleDateString("th-TH",{day:"numeric",month:"short",year:"2-digit"});
+}
+
+function renderList(){
+  const t = term.toLowerCase();
+  const rows = all.filter(x=>(plat==="ทั้งหมด"||x.plat===plat) && (!t || (x.cap+" "+x.link).toLowerCase().includes(t)));
+  $("count").textContent = "รวมโพสต์ · " + rows.length + " รายการ";
+  const list = $("list"); list.innerHTML = "";
+  if(!rows.length){ list.innerHTML = '<p class="empty">ไม่พบโพสต์ที่ตรงกับที่ค้นหา</p>'; $("more").hidden = true; return; }
+  rows.slice(0,shown).forEach(x=>{
+    const it=document.createElement("div"); it.className="item";
+    if(x.img){
+      const im=document.createElement("img"); im.className="th"; im.src=x.img; im.alt=""; im.loading="lazy";
+      im.onerror=()=>im.remove(); it.appendChild(im);
+    }else{
+      const pf=document.createElement("span"); pf.className="pf"; pf.textContent=short(x.plat); it.appendChild(pf);
+    }
+    const a=document.createElement("a"); a.className="link"; a.href=x.link; a.target="_blank"; a.rel="noopener";
+    const b=document.createElement("b"); b.textContent=x.cap||x.link;
+    const s=document.createElement("small"); s.textContent=[x.plat, fmtDate(x), hostOf(x.link)].filter(Boolean).join(" · ");
+    a.append(b,s); it.appendChild(a);
+    const c=document.createElement("button"); c.className="cp"; c.textContent="ก็อปลิงก์";
+    c.onclick=()=>copy(x.link); it.appendChild(c);
+    list.appendChild(it);
+  });
+  $("more").hidden = rows.length <= shown;
+}
+
+function toast(m){
+  const t=$("toast"); t.textContent=m; t.classList.add("show");
+  clearTimeout(toast.id); toast.id=setTimeout(()=>t.classList.remove("show"),1600);
+}
+async function copy(text){
+  try{ await navigator.clipboard.writeText(text); }
+  catch(e){ const a=document.createElement("textarea"); a.value=text; document.body.appendChild(a); a.select(); document.execCommand("copy"); a.remove(); }
+  toast("ก็อปลิงก์แล้ว");
+}
+
+$("q").oninput = e=>{ term=e.target.value.trim(); shown=PAGE_SIZE; renderList(); };
+$("more").onclick = ()=>{ shown+=PAGE_SIZE; renderList(); };
+renderLive();
+load().then(()=>{ renderChips(); renderList(); });
+</script>
+</body>
+</html>
