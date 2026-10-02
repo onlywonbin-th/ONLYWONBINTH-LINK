@@ -152,15 +152,17 @@ async function load(){
   const demo = ()=>{ all = norm(DEMO); };
   if(!SHEET_CSV_URL){
     demo();
-    $("status").innerHTML =  "<strong>ข้อแนะนำในการ Comment</strong><br>
-สามารถ Comment ได้ทั้งภาษาไทยและภาษาอังกฤษ
-โดยเน้นสร้าง <strong>Conversation ที่เกี่ยวข้องจริง</strong>
-และพูดถึง <strong>Wonbin + CHANEL / Fashion Week</strong><br><br>
-<strong>EX.</strong><br>
-• Wonbin กับ CHANEL เข้ากันมาก ลุคนี้ดีสุด ๆ<br>
-• วอนบินลุคนี้ที่ Paris Fashion Week หล่อมาก<br>
-• Wonbin looks effortlessly chic on his way to Paris.<br>
-• CHANEL and Wonbin look perfect together!";
+  $("status").innerHTML = `
+  <strong>ข้อแนะนำในการ Comment</strong><br>
+  สามารถ Comment ได้ทั้งภาษาไทยและภาษาอังกฤษ
+  โดยเน้นสร้าง <strong>Conversation ที่เกี่ยวข้องจริง</strong>
+  และพูดถึง <strong>Wonbin + CHANEL / Fashion Week</strong><br><br>
+  <strong>EX.</strong><br>
+  • Wonbin กับ CHANEL เข้ากันมาก ลุคนี้ดีสุด ๆ<br>
+  • วอนบินลุคนี้ที่ Paris Fashion Week หล่อมาก<br>
+  • Wonbin looks effortlessly chic on his way to Paris.<br>
+  • CHANEL and Wonbin look perfect together!
+`;
   }else{
     try{
       const res = await fetch(SHEET_CSV_URL);
@@ -169,15 +171,17 @@ async function load(){
       if(!all.length) throw new Error("empty");
     }catch(e){
       demo();
-      $("status").innerHTML = "<strong>ข้อแนะนำในการ Comment</strong><br>
-สามารถ Comment ได้ทั้งภาษาไทยและภาษาอังกฤษ
-โดยเน้นสร้าง <strong>Conversation ที่เกี่ยวข้องจริง</strong>
-และพูดถึง <strong>Wonbin + CHANEL / Fashion Week</strong><br><br>
-<strong>EX.</strong><br>
-• Wonbin กับ CHANEL เข้ากันมาก ลุคนี้ดีสุด ๆ<br>
-• วอนบินลุคนี้ที่ Paris Fashion Week หล่อมาก<br>
-• Wonbin looks effortlessly chic on his way to Paris.<br>
-• CHANEL and Wonbin look perfect together! ";
+    $("status").innerHTML = `
+  <strong>ข้อแนะนำในการ Comment</strong><br>
+  สามารถ Comment ได้ทั้งภาษาไทยและภาษาอังกฤษ
+  โดยเน้นสร้าง <strong>Conversation ที่เกี่ยวข้องจริง</strong>
+  และพูดถึง <strong>Wonbin + CHANEL / Fashion Week</strong><br><br>
+  <strong>EX.</strong><br>
+  • Wonbin กับ CHANEL เข้ากันมาก ลุคนี้ดีสุด ๆ<br>
+  • วอนบินลุคนี้ที่ Paris Fashion Week หล่อมาก<br>
+  • Wonbin looks effortlessly chic on his way to Paris.<br>
+  • CHANEL and Wonbin look perfect together!
+`;
     }
   }
   if(all.some(x=>x.ts!==null))
