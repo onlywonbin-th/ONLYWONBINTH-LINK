@@ -188,16 +188,6 @@ async function load(){
     all = all.map((x,i)=>({...x,i})).sort((a,b)=>(b.ts??-Infinity)-(a.ts??-Infinity)||a.i-b.i);
 }
 
-function renderLive(){
-  const nav = $("live"); nav.innerHTML = "";
-  LIVE.forEach(([n,u])=>{
-    const a=document.createElement("a"); a.href=u; a.target="_blank"; a.rel="noopener"; a.textContent=n; nav.appendChild(a);
-  });
-  if(COMMENT_PAGE){
-    const a=document.createElement("a"); a.href=COMMENT_PAGE; a.textContent="สุ่มคอมเม้น ▸"; nav.appendChild(a);
-  }
-}
-
 function renderChips(){
   const counts = {}; all.forEach(x=>counts[x.plat]=(counts[x.plat]||0)+1);
   const box = $("chips"); box.innerHTML = "";
@@ -250,7 +240,6 @@ async function copy(text){
 
 $("q").oninput = e=>{ term=e.target.value.trim(); shown=PAGE_SIZE; renderList(); };
 $("more").onclick = ()=>{ shown+=PAGE_SIZE; renderList(); };
-renderLive();
 load().then(()=>{ renderChips(); renderList(); });
 </script>
 </body>
