@@ -58,7 +58,7 @@ h1 span{display:block;font-weight:300}
 .link b{display:block;font-weight:600;font-size:15px;line-height:1.45;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:break-word}
 .link small{display:block;margin-top:2px;font-size:12px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .link:hover b{text-decoration:underline}
-.cp{flex:none;font:inherit;font-size:12px;color:var(--ink);background:#f1f1f1;border:0;border-radius:7px;padding:7px 10px;cursor:pointer}
+.cp{flex:none;font:inherit;font-size:12px;color:var(--ink);background:#f1f1f1;border:0;border-radius:7px;padding:7px 10px;cursor:pointer;text-decoration:none;white-space:nowrap}
 .cp:hover{background:var(--sel)}
 .empty{padding:34px 14px;text-align:center;color:var(--mute);font-size:14px}
 .more{display:block;width:100%;font:inherit;font-size:14px;padding:13px;border:0;border-top:1px solid #ececec;background:#fafafa;cursor:pointer}
@@ -221,8 +221,8 @@ function renderList(){
     const b=document.createElement("b"); b.textContent=x.cap||x.link;
     const s=document.createElement("small"); s.textContent=[x.plat, fmtDate(x), hostOf(x.link)].filter(Boolean).join(" · ");
     a.append(b,s); it.appendChild(a);
-    const c=document.createElement("button"); c.className="cp"; c.textContent="OPEN LINK";
-    c.onclick=()=>copy(x.link); it.appendChild(c);
+const c=document.createElement("a"); c.className="cp"; c.textContent="OPEN LINK";
+c.href=x.link; c.target="_blank"; c.rel="noopener"; it.appendChild(c);
     list.appendChild(it);
   });
   $("more").hidden = rows.length <= shown;
